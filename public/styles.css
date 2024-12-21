@@ -161,7 +161,7 @@ button:hover, .admin-btn:hover, .map-button:hover, .back-button:hover {
 @media (max-width: 600px){
     .container {
         width: 95%;
-        padding: 15px;
+       
     }
 
     .admin-btn{

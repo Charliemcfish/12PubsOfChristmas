@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel for Archie</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.svg" class="logo">
+        </header>
+        <h2>Add New Player</h2>
+        <form action="/admin/addPlayer" method="POST">
+            <input type="text" name="name" placeholder="Player Name" required>
+            <button type="submit">Add Player</button>
+        </form>
+
+        <section class="player-list">
+            <h2>Players</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (players && players.length> 0) { %>
+                        <% players.forEach(player=> { %>
+                            <tr>
+                                <td>
+                                    <%= player.name %>
+                                </td>
+                                <td>
+                                    <form action="/admin/editPlayer/<%= player.id %>" method="POST">
+                                        <input type="number" name="score" value="<%= player.score %>" required>
+                                        <button type="submit">Update</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="3">
+                                            No players yet!
+                                        </td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="current-pub-setting">
+            <h2>Set Current Pub</h2>
+            <form action="/admin/setCurrentPub" method="POST">
+                <select name="currentPub" required>
+                    <% pubs.forEach(pub=> { %>
+                        <option value="<%= pub.id %>" <%=pub.id===currentPub ? 'selected' : '' %>><%= pub.name %>
+                        </option>
+                        <% }); %>
+                </select>
+                <button type="submit">Set Pub</button>
+            </form>
+        </section>
+
+        <a href="/" class="back-button">Back To Home</a>
+
+    </div>
+
+</body>
+
+</html>

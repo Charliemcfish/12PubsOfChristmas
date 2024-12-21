@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Pubs of Christmas</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="snow"></div>
+
+    <div class="container">
+        <header>
+            <img src="logo.png" class="logo">
+            <!-- <a href="/admin" class="admin-btn"><img src="admin.png" class="admin-icon"></a> -->
+        </header>
+
+        <section class="leaderboard">
+            <h2>Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th>Name</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (players && players.length> 0) {%>
+                        <% players.forEach((player, index)=> { %>
+                            <tr>
+                                <td>
+                                    <%= index + 1 %>
+                                </td>
+                                <td>
+                                    <%= player.name %>
+                                </td>
+                                <td>
+                                    <%= player.score %>
+                                </td>
+                            </tr>
+                            <% }); %>
+                                <% } else { %>
+                                    <tr>
+                                        <td colspan="3">No players yet.</td>
+                                    </tr>
+                                    <% } %>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="current-pub">
+            <h2>Current Pub</h2>
+            <% if (currentPub) { %>
+                <p>Pub: <%= currentPub.name %>
+                </p>
+                <p>Drink: <%= currentPub.drink %>
+                </p>
+                <p>Challenge: <%= currentPub.challenge %>
+                </p>
+                <% } else { %>
+                    <p>No current pub selected</p>
+                    <% } %>
+        </section>
+
+        <a href="/map" class="map-button">View Map</a>
+
+
+    </div>
+
+    <script>
+      const maxSnowflakes = 150; 
+      const snowContainer = document.querySelector('.snow');
+
+
+
+      function createSnowflake() {
+          
+          if (snowContainer.children.length < maxSnowflakes){
+
+              const snowflake = document.createElement('div');
+              snowflake.classList.add('snowflake');
+              snowflake.style.left = `${Math.random() * 100}%`;
+              snowflake.style.animationDuration = `${Math.random() * 3 + 2}s`; 
+
+
+              snowContainer.appendChild(snowflake);
+
+
+          
+            snowflake.addEventListener('animationend', () => {
+              snowflake.remove();
+            });
+          }
+      }
+
+
+      //create snowflakes periodically
+      setInterval(createSnowflake, 100);
+
+
+  </script>
+</body>
+
+</html>

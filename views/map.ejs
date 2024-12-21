@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 Pubs Map</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="/logo.png" class="logo">
+        </header>
+        <!-- <section class="map">
+            <img src="/map.png" class="map-image">
+        </section> -->
+
+        <section class="pubs-list">
+            <h2>Pub Details</h2>
+            <ul>
+                <% pubs.forEach(pub=> { %>
+                    <li>
+                        <%= pub.id %> - <%= pub.name %><br>
+                            Drink: <%= pub.drink %><br>
+                            Challenge: <%= pub.challenge %>
+                    </li>
+                    <% }); %>
+            </ul>
+        </section>
+        <a href="/" class="back-button">Back to Home</a>
+
+    </div>
+</body>
+
+</html>

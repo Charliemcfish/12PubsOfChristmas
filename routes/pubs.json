@@ -1,0 +1,77 @@
+{
+  "pubs": [
+    {
+      "id": 1,
+      "name": "THE ARROW",
+      "drink": "Pint",
+      "challenge": "None"
+    },
+    {
+      "id": 2,
+      "name": "ROYAL STANDARD",
+      "drink": "Pint",
+      "challenge": "No Hands Drinking"
+    },
+    {
+      "id": 3,
+      "name": "THE BELL",
+      "drink": "Spirit + Mix",
+      "challenge": "No Putting Drink Down"
+    },
+    {
+      "id": 4,
+      "name": "THE BEEHIVE",
+      "drink": "Pint",
+      "challenge": "Shoe Swap"
+    },
+    {
+      "id": 5,
+      "name": "The Armoury",
+      "drink": "Spirit + Mix / Shot",
+      "challenge": "Water Hazard Hole"
+    },
+    {
+      "id": 6,
+      "name": "The Quicksilver Mail",
+      "drink": "Pint",
+      "challenge": "No Talking To Bartender"
+    },
+    {
+      "id": 7,
+      "name": "Coopers Mill",
+      "drink": "Tinny",
+      "challenge": "EAT FOOD"
+    },
+    {
+      "id": 8,
+      "name": "The Manor",
+      "drink": "Pint",
+      "challenge": "Irish Accent"
+    },
+    {
+      "id": 9,
+      "name": "Tescos Tinny",
+      "drink": "Pint",
+      "challenge": "Skull the can in under 45 seconds"
+    },
+    {
+      "id": 10,
+      "name": "SPOONS PT 1",
+      "drink": "Pint",
+      "challenge": "Weak Hand Drinking"
+    },
+    {
+      "id": 11,
+      "name": "SPOONS PT 2",
+      "drink": "Double Spirit",
+      "challenge": "Swap Drinks (Random Name Wheel)"
+    },
+    {
+      "id": 12,
+      "name": "SHIT ROCKKK",
+      "drink": "Spirit + Mix",
+      "challenge": "Stay Alive"
+    }
+  ],
+  "currentPub": 1
+}
